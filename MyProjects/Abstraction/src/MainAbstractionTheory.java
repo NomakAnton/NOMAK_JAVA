@@ -1,6 +1,6 @@
-public class MainAbstraction {
+public class MainAbstractionTheory {
     public static void main(String[] args) {
-
+        System.out.println("Hi");
     }
 }
 /*
