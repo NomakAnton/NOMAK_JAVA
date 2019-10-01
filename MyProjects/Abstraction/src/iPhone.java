@@ -1,6 +1,6 @@
-public class iPhone extends AbstractPhone {
-    public iPhone(int year) {
-        super(year);
+public class iPhone extends SmartPhone {
+    public iPhone(int year,int hour,String operationSystem) {
+        super(year,hour,operationSystem);
     }
 
     @Override
@@ -11,5 +11,10 @@ public class iPhone extends AbstractPhone {
     @Override
     public void ring(int inputNumber) {
 
+    }
+
+    @Override
+    public void install(String program) {
+        super.install(program);
     }
 }
