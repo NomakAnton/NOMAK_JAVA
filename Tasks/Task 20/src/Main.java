@@ -1,55 +1,78 @@
+import sun.font.FontRunIterator;
+
 public class Main {
     public static void main(String[] args) {
         int matrix[][] = new int[5][5];
-
         int count = 1;
+        int topLeft = 0;
+        int topRight = matrix.length - 1;
+        int bottomRight = matrix.length - 2;
+        int bottomLeft = 0;
 
-        for (int i = 0; i < matrix.length; i++) {
-            matrix[0][i] = count;
+        for (int i = topLeft; i <= topRight ; i++) {
+            matrix[topLeft][i] = count;
             count++;
         }
-        for (int i = 1; i < matrix.length; i++) {
-            matrix[i][matrix.length - 1] = count;
+        topLeft = topLeft + 1;
+        for (int i = topLeft; i <= topRight; i++) {
+            matrix[i][topRight] = count;
             count++;
         }
-        for (int i = matrix.length - 2; i > -1; i--) {
-            matrix[matrix.length - 1][i] = count;
+        topRight = topRight - 1;
+        for (int i = bottomRight; i >=topLeft-1 ; i--) {
+            matrix[topRight+1][i] = count;
             count++;
         }
-        for (int i = matrix.length - 2; i > 0; i--) {
-            matrix[i][0] = count;
+        bottomRight = bottomRight -1;
+
+        for (int i = bottomRight+1;i >= topLeft ; i--) {
+            matrix[i][bottomLeft] = count;
             count++;
         }
-        /*for (int i = 1; i < matrix.length -1 ; i++) {
-            matrix[1][i] = count;
-            count++;
+        bottomLeft = bottomLeft +1;
+        int result = matrix.length*matrix.length;
+        while (true){
+            if (count < matrix.length * matrix.length) {
+                for (int i = topLeft; i <= topRight; i++) {
+                    matrix[topLeft][i] = count;
+                    count++;
+                }
+                topLeft = topLeft + 1;
+            }
+            else break;
+            if (count < matrix.length*matrix.length){
+                for (int i = topLeft; i <= topRight; i++) {
+                    matrix[i][topRight] = count;
+                    count++;
+                }
+                topRight = topRight - 1;
+            }
+            else break;
+            if(count < matrix.length*matrix.length){
+                for (int i = bottomRight; i >=topLeft-1 ; i--) {
+                    matrix[topRight+1][i] = count;
+                    count++;
+                }
+                bottomRight = bottomRight -1;
+            }
+            else break;
+            if(count < matrix.length*matrix.length){
+                for (int i = bottomRight+1;i >= topLeft ; i--) {
+                    matrix[i][bottomLeft] = count;
+                    count++;
+                }
+                bottomLeft = bottomLeft +1;
+            }
+            else break;
         }
-        for (int i = 2 ; i < matrix.length-1; i++) {
-            matrix[i][matrix.length-2] = count;
-            count++;
+        for (int i = 0; i < matrix.length ; i++) {
+            for (int j = 0; j < matrix[i].length ; j++) {
+                if(matrix[i][j] == 0){
+                    matrix[i][j] = count;
+                    break;
+                }
+            }
         }
-        for (int i = matrix.length-3; i >0 ; i--) {
-            matrix[matrix.length-2][i] = count;
-            count++;
-        }
-
-        for (int i = 1; i < matrix.length-2 ; i++) {
-            matrix[2][i] = count;
-            count++;
-        }
-
-
-
-
-
-
-
-
-
-*/
-
-
-
 
         for (int i = 0; i < matrix.length ; i++) {
             for (int j = 0; j < matrix[i].length ; j++) {
@@ -57,7 +80,5 @@ public class Main {
             }
             System.out.println();
         }
-
-
     }
-    }
+}
