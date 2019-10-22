@@ -37,14 +37,17 @@ public class Main {
         Russia.addProgram(talkShow);
         Russia.addProgram(serial);
         RemoteController remoteController = new RemoteController(homeTV);
-        remoteController.addChannel(firstChannel);
-        remoteController.addChannel(MTV);
-        remoteController.addChannel(TNT);
-        remoteController.addChannel(STS);
-        remoteController.addChannel(Russia);
-        remoteController.pushOn();
-        System.out.println("");
-        remoteController.pushOn();
+        homeTV.addChannel(firstChannel);
+        homeTV.addChannel(MTV);
+        homeTV.addChannel(TNT);
+        homeTV.addChannel(STS);
+        homeTV.addChannel(Russia);
+        //remoteController.pushNumberButton(3);
+        //remoteController.pushButtonNext();
+        //remoteController.pushButtonPrevious();
+        homeTV.setRemoteController(remoteController);
+       remoteController.pushOn();
+       remoteController.pushOn();
 
 
 
