@@ -4,7 +4,7 @@ public class Car {
     private static final int MIN_SPEED = 1;
 
     private String model;
-    private int km;
+    protected int km;
     private int speed;
 
     public Car(String model, int speed){

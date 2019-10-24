@@ -4,6 +4,9 @@ public class SuperTruck extends Truck {
         super(model, speed, capasity);
         this.loadFactor = loadFactor;
     }
+    public void go(int km){
+        this.km +=km*loadFactor;
+    }
     public void load(double cargoCapacity){
         cargoCapacity = cargoCapacity * loadFactor;
         if(this.capacity >=cargoCapacity ){
