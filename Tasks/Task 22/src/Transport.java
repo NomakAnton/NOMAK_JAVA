@@ -3,6 +3,18 @@ public abstract class Transport {
     private int number;
     private int size;
 
+
+    public Transport(int number,int size ) {
+        this.number = number;
+        this.size = size;
+    }
+
+    public Parking getParking() {
+        return parking;
+    }
+
+    private  Parking parking;
+
     public int getNumber() {
         return number;
     }
@@ -20,18 +32,14 @@ public abstract class Transport {
     }
 
 
-    public Transport(int number, int size) {
-        this.number = number;
-        this.size = size;
-    }
-
     public void toPark(Parking parking){
         if(parking.vacancyRequest(this.getsize()) == true){
             System.out.println("Свободные места есть !");
+            this.parking = parking;
             Parking(parking);
         }
         else {
-            System.out.println("К сожаление свободных мест нет!");
+            System.out.println("К сожаление свободных мест для Вашего транспорта нет!");
         }
     }
 
@@ -66,5 +74,14 @@ public abstract class Transport {
                 }
 
         }
+    }
+    public void leaveParking(){
+        for (int i = 0; i < parking.getNumberOfParkingSpaces().length ; i++) {
+            if (parking.getNumberOfParkingSpaces()[i]== this.number){
+                parking.getNumberOfParkingSpaces()[i] = 0;
+            }
+
+        }
+
     }
 }
