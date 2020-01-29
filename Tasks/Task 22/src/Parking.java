@@ -1,56 +1,36 @@
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 public class Parking {
-    private static final int MAX_NUMBER_OF_PARKING_SPACES = 20;
+    private ParkingPlace places[];
 
-    public int[] getNumberOfParkingSpaces() {
-        return numberOfParkingSpaces;
-    }
-
-    private int[] numberOfParkingSpaces;
-
-    public Parking() {
-        this.numberOfParkingSpaces = new int[MAX_NUMBER_OF_PARKING_SPACES];
-    }
-
-    public boolean vacancyRequest(int size) {
-        if (size > numberOfParkingSpaces.length) {
-            return false;
+    public Parking(){
+        this.places = new ParkingPlace[10];
+        for (int i = 0; i < places.length ; i++) {
+            places[i] = new ParkingPlace();
         }
-        int count = 0;
-        for (int i = 0; i < numberOfParkingSpaces.length; i++) {
 
-            if (numberOfParkingSpaces[i] == 0) {
-                count++;
-                if (count == size) {
-                    count = 0;
-                    return true;
-                }
-                try {
-                    for (int j = 1; j < size; j++) {
-                        if (numberOfParkingSpaces[i + 1] == 0) {
-                            count++;
-                            i++;
-                        }
-                    }
-                } catch (Exception e) {
-                    return false;
-                }
-                if (count == size) {
-                    return true;
-                } else {
-                    count = 0;
-                }
-
+    }
+    public boolean park(Transport transport){
+        for (int i = 0; i < places.length ; i++) {
+            if(places[i].getNumber() == null){
+                places[i].setNumber(transport.getNumber());
+                places[i].setTransport(transport);
+                System.out.println("Машина с номером " + places[i].getNumber() + " припаркована на месте номер " + i);
+                return true;
             }
-
         }
+        System.out.println("Свободных мест нет!");
         return false;
     }
-
-
-
-    public void show(){
-        for (int i = 0; i < numberOfParkingSpaces.length ; i++) {
-            System.out.println(numberOfParkingSpaces[i]);
+    public void unpark(String number){
+        for (int i = 0; i < places.length ; i++) {
+            if(places[i].getNumber().equals(number)){
+                places[i].setTransport(null);
+                places[i].setNumber(null);
+                System.out.println("Машина с номером " + number + " выехала с парковки");
+                return;
+            }
         }
+        System.out.println("Машины с таким номером на парковке нет");
     }
 }
