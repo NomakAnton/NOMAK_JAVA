@@ -1,5 +1,5 @@
-public class Car extends GroundTransport {
-    public Car(String number) {
+public abstract class AirTransport extends Transport {
+    public AirTransport(String number) {
         super(number);
     }
 
@@ -21,5 +21,8 @@ public class Car extends GroundTransport {
     @Override
     public void unpark() {
         super.unpark();
+    }
+    public void fly(){
+
     }
 }

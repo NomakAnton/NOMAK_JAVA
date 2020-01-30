@@ -8,5 +8,7 @@ public class Main {
         camry.park(parking);
         lacetti.unpark();
         vaz.park(parking);
+        Tank tank = new Tank("412");
+        tank.park(parking);
     }
 }

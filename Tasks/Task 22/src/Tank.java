@@ -1,5 +1,5 @@
-public class Car extends GroundTransport {
-    public Car(String number) {
+public class Tank extends GroundTransport implements Shoot {
+    public Tank(String number) {
         super(number);
     }
 
@@ -21,5 +21,10 @@ public class Car extends GroundTransport {
     @Override
     public void unpark() {
         super.unpark();
+    }
+
+    @Override
+    public void shoot() {
+
     }
 }

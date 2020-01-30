@@ -1,5 +1,5 @@
-public class Car extends GroundTransport {
-    public Car(String number) {
+public abstract class GroundTransport extends Transport {
+    public GroundTransport(String number) {
         super(number);
     }
 

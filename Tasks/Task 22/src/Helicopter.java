@@ -1,5 +1,5 @@
-public class Car extends GroundTransport {
-    public Car(String number) {
+public class Helicopter extends AirTransport implements Shoot {
+    public Helicopter(String number) {
         super(number);
     }
 
@@ -21,5 +21,15 @@ public class Car extends GroundTransport {
     @Override
     public void unpark() {
         super.unpark();
+    }
+
+    @Override
+    public void fly() {
+        super.fly();
+    }
+
+    @Override
+    public void shoot() {
+
     }
 }
