@@ -1,4 +1,4 @@
-public class Theory {
+public class Theory1 {
     /*
 1. Ошибки времени компиляции - происходят при нарушении синтаксиса языка(то бишь программа не может быть преобразована
 в байт код)Пример :
@@ -16,6 +16,7 @@ int z = x + y;
 *java.lang.ArrayIndexOutOfBoundsException - класс исключения, экземпляр которого вырасывается при выходе за пределы
 массива.
 *java.lang.OutOfMemoryError - класс исключения, экземпляр которого выбрасывается при недостатке памяти для JVM.
+*java.lang.StackOverflowError - класс исключения, экземпляр которого выбрасывается при переполнении стека вызовов.
 
                                                                   Throwable
                                                |                                           |
@@ -27,11 +28,21 @@ int z = x + y;
                                                |                                            |
                                                V                                            V
                                        ArithmeticException                           OutOfMemoryError
-                                      NullPointerException
+                                      NullPointerException                          StackOverflowError
 
                                      IndexOutOfBoundsException
                                                |
                                                V
                                    ArrayIndexOutOfBoundsException
+
+## Иерархия исключений
+
+*Exception - предок всех более - менее стандартных ошибок во время выполнения
+
+*Error - ошибки, связанные с работой JVM, работы операционной системы и железом.
+
+
+
+
 */
 }
