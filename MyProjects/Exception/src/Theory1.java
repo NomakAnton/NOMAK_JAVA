@@ -17,23 +17,26 @@ int z = x + y;
 массива.
 *java.lang.OutOfMemoryError - класс исключения, экземпляр которого выбрасывается при недостатке памяти для JVM.
 *java.lang.StackOverflowError - класс исключения, экземпляр которого выбрасывается при переполнении стека вызовов.
+*java.lang.IllegalArgumentException - потомок RuntimeException, стандартный класс исключения используемый программистами.
+*java.lang.FileNotFoundException - потомок IOException, выбрасывается при отсутствии файла на диске.
+*java.lang.IOException - потомок Exception, выбрасывается при проблемах с вводом выводом
 
                                                                   Throwable
-                                               |                                           |
-                                               V                                           V
-                                            Exception                                    Error
-                                               |                                           |
-                                               V                                           V
-                                         RuntimeException                           VirtualMachineError
-                                               |                                            |
-                                               V                                            V
-                                       ArithmeticException                           OutOfMemoryError
-                                      NullPointerException                          StackOverflowError
+                                               |                                                             |
+                                               V                                                             V
+                                            Exception                                                       Error
+              |                                |                                                             |
+              V                                V                                                             V
+      RuntimeException                     IOException                                            VirtualMachineError
+              |                                                                                              |
+              V                                                                                              V
+     ArithmeticException                                                                                OutOfMemoryError
+     NullPointerException                                                                             StackOverflowError
 
-                                     IndexOutOfBoundsException
-                                               |
-                                               V
-                                   ArrayIndexOutOfBoundsException
+   IndexOutOfBoundsException
+              |
+              V
+  ArrayIndexOutOfBoundsException
 
 ## Иерархия исключений
 
