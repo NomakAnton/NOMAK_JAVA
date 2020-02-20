@@ -5,7 +5,9 @@ import java.io.OutputStream;
 public class MainOutputStream {
     public static void main(String[] args) {
         try {
-            OutputStream output = new FileOutputStream("output.txt");
+            OutputStream output = new FileOutputStream("output.txt",true);
+            output.write('A');
+            output.write('Ф');
 
         }
         catch (IOException e){
