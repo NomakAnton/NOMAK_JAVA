@@ -7,5 +7,6 @@ import utils.List;
 public interface CarsRepository extends CrudRepository<Car> {
     public List<Car> findByOwner(User owner);
 
+
 }
 

@@ -17,16 +17,11 @@ public class Main {
         CarsRepository carsRepository = new CarsRepositoryImpl("cars.txt",idGeneratorForCars);
         CarFromConsoleRetriever car1 = new CarFromConsoleRetriever();
         UserFromConsoleRetriever user1 = new UserFromConsoleRetriever();
-        //User user = user1.retrieveUser();
-        //usersRepository.save(user);
-     //  Car car = car1.retrieveCar();
-     //  carsRepository.save(car);
-        User oksana = new User("Оксана","Малышева","oksana","123");
-        oksana.setId(4);
-        ArrayList<Car> cars = (ArrayList<Car>) carsRepository.findByOwner(oksana);
-        for (int i = 0; i <cars.getCount() ; i++) {
-            System.out.println(cars.get(i));
-        }
+      //  User user = user1.retrieveUser();
+      //  usersRepository.save(user);
+       Car car = car1.retrieveCar();
+       carsRepository.save(car);
+
 
         //System.out.println(usersRepository.find(4));
     }

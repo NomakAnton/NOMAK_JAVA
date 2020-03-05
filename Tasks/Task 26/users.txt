@@ -1,4 +1,4 @@
-1 Михалина Новаковская mixalina qwerty007
-2 Карина Сычева karina qwerty008
-3 Ольга Саксон olga qwerty009
-4 Оксана Малышева oksana qwerty010
+1 Антон Федоров anton qwerty007
+2 Анастасия Кузьмина anastasia qwerty008
+3 Александр Крюков alexander qwerty009
+4 Алексей Сумин alexey qwerty010

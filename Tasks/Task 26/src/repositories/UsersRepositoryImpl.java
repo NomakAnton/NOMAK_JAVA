@@ -29,7 +29,7 @@ public class UsersRepositoryImpl implements UsersRepository {
     }
 
     @Override
-    public User find(int id) {
+    public User findById(int id) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             String currentLine = reader.readLine();
@@ -48,5 +48,10 @@ public class UsersRepositoryImpl implements UsersRepository {
         catch (IOException e){
             throw new IllegalArgumentException(e);
         }
+    }
+
+    @Override
+    public User findByLastName(String lastName) {
+        return null;
     }
 }

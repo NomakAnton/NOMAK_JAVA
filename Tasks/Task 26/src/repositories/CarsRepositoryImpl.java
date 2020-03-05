@@ -34,7 +34,7 @@ public class CarsRepositoryImpl implements CarsRepository {
     }
 
     @Override
-    public Car find(int id) {
+    public Car findById(int id) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             String currentLine = reader.readLine();
