@@ -2,6 +2,21 @@ package models;
 
 public class Car {
     private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", number='" + number + '\'' +
+                ", idOwner=" + idOwner +
+                '}';
+    }
+
     private String model;
     private String number;
     private int idOwner;
