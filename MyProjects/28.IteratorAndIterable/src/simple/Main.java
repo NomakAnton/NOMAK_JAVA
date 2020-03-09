@@ -1,4 +1,6 @@
-public class MainDemo {
+package simple;
+
+public class Main {
     public static void main(String[] args) {
         IntegerLinkedList list = new IntegerLinkedList();
         list.addToBegin(1);
@@ -15,8 +17,9 @@ public class MainDemo {
         list.addToEnd(8);
         list.addToEnd(9);
         list.addToEnd(10);
-        for (int i = 0; i < list.getCount() ; i++) {
-            System.out.println(list.get(i));
+        Iterator iterator = list.iterator();
+        while ( iterator.hasNext()){
+            System.out.println(iterator.next());
         }
     }
 }

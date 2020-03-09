@@ -1,4 +1,6 @@
-public class IntegerLinkedList {
+package simple;
+
+public class  IntegerLinkedList {
     private Node top;
     private Node tail;
     private int count;
